@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$("#preloader").hide();
 	$("#form1").hide();
 	var name;
 	$("#buttons").click(function(e) {
@@ -10,6 +11,7 @@ $(document).ready(function() {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
 		}
+		window.scrollBy(0,1000);
 		$("#form").hide();
 		$("#form1").show();
 		e.preventDefault();
@@ -20,7 +22,7 @@ $(document).ready(function() {
 		$("#msg1").val('');
 		var res = val1.match(/up/g);
 		if(res) {
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh! Thats not easy to answer... Well, nothings happening in my world, what about you ?</h3></div></li>');	
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh! Thats not easy to answer... Well, nothings happening in my world, <br>what about you ?</h3></div></li>');	
 		}
 		var res1 =val1.match(/creat/g);
 		if(res1) {
@@ -31,6 +33,11 @@ $(document).ready(function() {
 		if(res2) {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspIt is&nbsp' + date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() + ' today, hope youre not missing someones birthday :p !</h3></div></li>');	
 		}
+		var res2 =val1.match(/old/g);
+		if(res2) {
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspWell I was created on 23/5/2017 and whats the date today its &nbsp' + date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() + ' so figure out yourself ! :p</h3></div></li>');	
+		}
+				window.scrollBy(0,2000);
 		event.preventDefault();
 	});
 });
