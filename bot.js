@@ -50,6 +50,11 @@ $(document).ready(function() {
 		else {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
 		}
+		var res3a =val1.match(/what/g);
+		var res3b =val1.match(/doing/g);
+		if(res3a && res3b) {
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspSeriously?? You ask that to a bot ! :O Kyaa Yaaar! Well, if you really want to know, Im idle ! doing, nothing ! :# Ask me something interesting manh! </h3></div></li>');
+		}
 				window.scrollBy(0,2000);
 		event.preventDefault();
 	});
