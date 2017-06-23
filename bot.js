@@ -42,7 +42,7 @@ $(document).ready(function() {
  				case 6 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Anything that\'s not down or sideways B-) </h3></div></li>');	
  						 break;
  				case 7 :
- 				case 8 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp The chances of you dying alone and miserable. Yeah, its sad, I know. </h3></div></li>');	
+ 				case 8 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp There chances of you dying alone and miserable. Yeah, its sad, I know. </h3></div></li>');	
  						 break;
  				default : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp GoT trailer <3 Winter Is Here peeps!.</h3></div></li>');	
  						
@@ -93,7 +93,6 @@ $(document).ready(function() {
 		var res6 = val1.match(/ridam/g);
 		var no = val1.match(/no/g);
 		var yes = val1.match(/yes/g);
-		var flag = 0;
 		if(res6) {
 			flag = 1;
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspYou really wanna talk about her ? eh ?</h3></div></li>');
@@ -103,6 +102,7 @@ $(document).ready(function() {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspGreat ! :D </h3></div></li>');
 		}
 		if(yes) {
+			flag = 1;
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp *angry face* Its better if we dont ! Get rid of it ! Do you want her number ? :P</h3></div></li>');
 			// if(no) {
 			// 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp *claps* you seem good to me... we could talk more!</h3></div></li>');
@@ -110,7 +110,6 @@ $(document).ready(function() {
 			// if(yes) {
 			// 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp LOL, go ask her then ! :P *haha* </h3></div></li>');
 		 //    }
-		 flag = 1;
 		}
 		// console.log(flag);
 		var no1 = val1.match(/nah/g);
@@ -127,10 +126,10 @@ $(document).ready(function() {
 		// if(!res1 && !res2 && !res3 && !res4 && !res5 && !res6 && !res2a && !res2b && !res2c && !res2d && !res3a && !res3b && !res4a && !res4b && !res4c && !res && !no && !yes) {
 		// 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
 		// }
-		else {
-						if(flag == 0)
+		
+		if(flag == 0)
  				$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
-		}
+		
 				window.scrollBy(0,2000);
 			}
 		event.preventDefault();
