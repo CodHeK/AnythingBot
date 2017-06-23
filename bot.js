@@ -88,7 +88,24 @@ $(document).ready(function() {
 		var res4c = val1.match(/you/g);
 		if(res4a && res4b && res4c) {
 			flag = 1;
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspIm cool ! Sab thik thak ?</h3></div></li>');
+			counter = Math.floor(Math.random() * 11);  
+ 			switch(counter) {
+ 
+ 				case 1 :
+ 				case 2 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspIm cool ! Sab thik thak ?</h3></div></li>');
+ 						 break;
+ 				case 3 :
+ 				case 4 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp I was good until now -_-</h3></div></li>');	
+ 						 break;
+ 				case 5 :
+ 				case 6 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Talking to you makes makes my day so much better ! ^_^ </h3></div></li>');	
+ 						 break;
+ 				case 7 :
+ 				case 8 : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Never Better :P </h3></div></li>');	
+ 						 break;
+ 				default : $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Majama ! :P</h3></div></li>');	
+ 						
+ 			}
 		}
 		var res7a =val1.match(/haan/g);
 		var res7b =val1.match(/han/g);
