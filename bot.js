@@ -88,7 +88,14 @@ $(document).ready(function() {
 		var res4c = val1.match(/you/g);
 		if(res4a && res4b && res4c) {
 			flag = 1;
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp</h3></div></li>');
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspIm cool ! Sab thik thak ?</h3></div></li>');
+		}
+		var res7a =val1.match(/haan/g);
+		var res7b =val1.match(/han/g);
+		var res7c =val1.match(/hn/g);
+		if(res7a || res7b || res7c) {
+			flag = 1;
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspEnglish pleej ?</h3></div></li>');
 		}
 		var res6 = val1.match(/ridam/g);
 		var no = val1.match(/no/g);
