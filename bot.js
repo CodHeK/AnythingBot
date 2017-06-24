@@ -217,38 +217,7 @@ $(document).ready(function() {
 				success: function(data) {
 					var wt = weather(data);
 					var t = temp(data);
-					// var h = humidity(data);
-					// var p = pressure(data);
-					// var max = maxtemp(data);
-					// var min = mintemp(data);
-					// var w = wind(data);
-					// var c = country(data);
-					// var d = wind_direction(data);
-
 					$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + wt + ' with average temp about&nbsp' + t + '</h3></div></li>');
-					// $("#desp").html(wt);
-					// $("#val").html(t);
-					// $("#val_h").html(h);
-					// $("#val_p").html(p);
-					// $("#val_mt").html(max);
-					// $("#val_mit").html(min);
-					// $("#val_w").html(w);
-					// $("#country").html(c);
-					// $("#val_d").html(d);
-
-
-					// $("#cty").append("<br>");
-					// $("#cty").append("<br>"+ c);
-					// $("#tmp").append("<br>");
-					// $("#tmp").append("<br>" + t);
-					// $("#mintp").append("<br>");
-					// $("#mintp").append("<br>" + min);
-					// $("#maxtp").append("<br>");
-					// $("#maxtp").append("<br>" + max);
-					// $("#humid").append("<br>");
-					// $("#humid").append("<br>" + h);
-					// $("#pres").append("<br>");
-					// $("#pres").append("<br>" + p);
 					window.scrollBy(0,2000);
 				}
 			});
