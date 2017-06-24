@@ -136,7 +136,7 @@ $(document).ready(function() {
 		var res7b =val1.match(/han/g);
 		var res7c =val1.match(/hn/g);
 		//var res7d =val1.match(/ha/g);
-		if(res7a || res7b || res7c || res7d) {
+		if(res7a || res7b || res7c) {
 			flag = 1;
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspEnglish pleej ?</h3></div></li>');
 		}
