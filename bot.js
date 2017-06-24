@@ -1,11 +1,20 @@
 $(document).ready(function() {
 	$("#preloader").hide();
 	$("#form1").hide();
-	var name, check;
+	var name, check = 0;
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
+		check = 0;
+		var ress = val.match(/hey/g);
+		var ress1 = val.match(/Hey/g);
+		if(ress || ress1) {
+			check = 1;
+			$("#list").append('<li> <div class="jumbotron"><h3>Hey! Im <b>Gags</b>, and you are ?</h3></div></li>').fadeIn(2000);
+		}
+		if(check == 0) {
 		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
-		// name = $("li:nth-child(2) .jumbotron h3").html();
+		//name = $("li:nth-child(3) .jumbotron h3").html();
+		
 		name = val;
 		var introSen = "" + name + "&nbspfeel free to ask me anything, anytime!";
 		if(name) {
@@ -15,6 +24,7 @@ $(document).ready(function() {
 		window.scrollBy(0,1000);
 		$("#form").hide();
 		$("#form1").show();
+	}
 		e.preventDefault();
 	});
 	$("#buttons1").click(function(event) {
