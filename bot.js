@@ -17,7 +17,7 @@ $(document).ready(function() {
 				$("#puf").hide();
 				$("#list").append('<li> <div class="jumbotron"><h3>Hey! I\'m <b>Gags</b>, and you are ?</h3></div></li>').fadeIn(2000);
 
-			}, 2000);
+			}, 1000);
 		}
 		if(check == 0) {
 		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
