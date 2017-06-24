@@ -74,7 +74,7 @@ $(document).ready(function() {
  			}
 			// $("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspWell, nothings happening in my world, <br>what about you ?</h3></div></li>');	
 		}
-		var res1 =val1.match(/creat/g);
+		var res1 =val1.match(/created/g);
 		var res4 = val1.match(/you/g);
 		var res5 = val1.match(/made/g);
 		if((res1 && res4) || (res5 && res4)) {
@@ -90,7 +90,7 @@ $(document).ready(function() {
 		var res2 =val1.match(/old/g);
 		if(res2) {
 			flag = 1;
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspWell I was created on 23/5/2017 and whats the date today its &nbsp' + date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() + ' so figure out yourself ! :p</h3></div></li>');	
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspWell I was created on 23/5/2017 and it is &nbsp' + date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() + ', do the math ! :p</h3></div></li>');	
 		}
 		var res2c =val1.match(/made/g);
 		var res2d =val1.match(/were/g);
@@ -98,7 +98,7 @@ $(document).ready(function() {
 		var res2b =val1.match(/created/g);
 		if((res2a && res2b) || (res2c && res2d)) {
 			flag = 1;
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspWell, I was born or created, whatever on 23/5/2017</h3></div></li>');
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspOn 23<sup>rd</sup> June, 2017</h3></div></li>');
 		}
 
 		
@@ -223,6 +223,46 @@ $(document).ready(function() {
 			});
 		}
 
+		var plus = val1.match(/plus/g); 
+		if(plus || (val1.indexOf('+') > -1)) {
+			flag = 1;
+			var intValue = parseInt(val1.match(/[0-9]+/)[0], 10);
+			var intVal = val1.split(" ").splice(-1)[0];
+			var intValue1 = parseInt(intVal.match(/[0-9]+/)[0], 10);
+			var sum = Number(intValue) + Number(intValue1);
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp It is '+ sum + '</h3></div></li>');
+		}
+
+		var minus = val1.match(/minus/g); 
+		if(minus || (val1.indexOf('-') > -1)) {
+			flag = 1;
+			var intValue = parseInt(val1.match(/[0-9]+/)[0], 10);
+			var intVal = val1.split(" ").splice(-1)[0];
+			var intValue1 = parseInt(intVal.match(/[0-9]+/)[0], 10);
+			var sub = Number(intValue) - Number(intValue1);
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp It is '+ sub + '</h3></div></li>');
+		}
+
+		var mult = val1.match(/mult/g); 
+		var into = val1.match(/into/g); 
+		if(mult || (val1.indexOf('x') > -1) || (val1.indexOf('*') > -1) || (val1.indexOf('X') > -1) || into) {
+			flag = 1;
+			var intValue = parseInt(val1.match(/[0-9]+/)[0], 10);
+			var intVal = val1.split(" ").splice(-1)[0];
+			var intValue1 = parseInt(intVal.match(/[0-9]+/)[0], 10);
+			var mul = Number(intValue)*Number(intValue1);
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp It is '+ mul + '</h3></div></li>');
+		}
+
+		var divi = val1.match(/divi/g); 
+		if(divi || (val1.indexOf('/') > -1)) {
+			flag = 1;
+			var intValue = parseInt(val1.match(/[0-9]+/)[0], 10);
+			var intVal = val1.split(" ").splice(-1)[0];
+			var intValue1 = parseInt(intVal.match(/[0-9]+/)[0], 10);
+			var div = Number(intValue)/Number(intValue1);
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp It is '+ div + '</h3></div></li>');
+		}
 
 		if(flag == 0)
  				$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
