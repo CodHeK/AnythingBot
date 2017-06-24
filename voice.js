@@ -11,7 +11,7 @@ function startDictation() {
       recognition.start();
 
       recognition.onresult = function(e) {
-        document.getElementById('transcript').value
+        document.getElementById('msg').value
                                  = e.results[0][0].transcript;
         recognition.stop();
         document.getElementById('form').submit();
@@ -37,7 +37,7 @@ function startDictation() {
       recognition.start();
 
       recognition.onresult = function(e) {
-        document.getElementById('transcript').value
+        document.getElementById('msg1').value
                                  = e.results[0][0].transcript;
         recognition.stop();
         document.getElementById('form1').submit();
