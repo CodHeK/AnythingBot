@@ -7,7 +7,7 @@ $(document).ready(function() {
 		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
 		// name = $("li:nth-child(2) .jumbotron h3").html();
 		name = val;
-		var introSen = "" + name + "&nbspfeel free too ask me anything, anytime!";
+		var introSen = "" + name + "&nbspfeel free t o ask me anything, anytime!";
 		if(name) {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
@@ -128,14 +128,7 @@ $(document).ready(function() {
 		if(yes) {
 			flag = 1;
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp *angry face* Its better if we dont ! Get rid of it ! Do you want her number ? :P</h3></div></li>');
-			// if(no) {
-			// 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp *claps* you seem good to me... we could talk more!</h3></div></li>');
-			// }
-			// if(yes) {
-			// 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp LOL, go ask her then ! :P *haha* </h3></div></li>');
-		 //    }
 		}
-		// console.log(flag);
 		var no1 = val1.match(/nah/g);
 		var yes1 = val1.match(/yeah/g);
 		var give = val1.match(/give/g);
@@ -147,9 +140,6 @@ $(document).ready(function() {
 			flag = 1;
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp LOL, go ask her then ! :P *haha* </h3></div></li>');
 		}
-		// if(!res1 && !res2 && !res3 && !res4 && !res5 && !res6 && !res2a && !res2b && !res2c && !res2d && !res3a && !res3b && !res4a && !res4b && !res4c && !res && !no && !yes) {
-		// 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
-		// }
 		
 		if(flag == 0)
  				$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
@@ -157,5 +147,5 @@ $(document).ready(function() {
 				window.scrollBy(0,2000);
 			}
 		event.preventDefault();
-	});
+	});	
 });

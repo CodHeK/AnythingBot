@@ -24,21 +24,27 @@
 	<div class="form-group" style="margin-left: 10%;">
 		<form method="POST" id="form" style="position: fixed;">
 			<div class="row">
-				<div class="col-md-10 col-sm-12 col-xs-12">
+				<div class="col-md-8 col-sm-12 col-xs-12">
 					<input type="text"  class="form-control" name="message" placeholder="Type a message..." id="msg">
 				</div>
 				<div class="col-md-2 col-sm-12 col-xs-12">
 					<button class="btn btn-default" id="buttons">Send</button><br>
 				</div>
+				<div class="col-md-2 col-sm-12 col-xs-12">
+					<i class="fa fa-microphone" aria-hidden="true" onclick="startDictation()" style="color: white;margin-left: 30%;font-size: 20px;margin-top: 25%;"></i>
+				</div>
 			</div>
 		</form>
 		<form method="POST" id="form1" style="position: fixed;">
 			<div class="row">
-				<div class="col-md-10 col-sm-12 col-xs-12">
+				<div class="col-md-8 col-sm-12 col-xs-12">
 					<input type="text"  class="form-control" name="message" placeholder="Type a message..." id="msg1">
 				</div>
 				<div class="col-md-2 col-sm-12 col-xs-12">
 					<button class="btn btn-default" id="buttons1">Send</button><br>
+				</div>
+				<div class="col-md-2 col-sm-12 col-xs-12">
+					<i class="fa fa-microphone" aria-hidden="true" onclick="startDictation1()" style="color: white;margin-left: 30%;font-size: 20px;margin-top: 25%;"></i>
 				</div>
 			</div>
 		</form>
@@ -49,7 +55,7 @@
 		 <ul style="list-style: none;" id="list">
 		 	<li>
 		 		<div class="jumbotron">
-		 			<h3>Hey! I'm <b>Gags</b>, the AnythingBot... You can ask me anything! ;) Go on and Test me! But before that, may I know your first name ?</h3>
+		 			<h3>Hey! I'm <b>Gags</b>, the AnythingBot... You can ask me anything! ;) Go on and Test me! But before that, may I know your first name ? <br>*dont use my name*</h3>
 		 		</div>
 		 	</li>
 		 </ul>
@@ -59,6 +65,7 @@
 
 
 <script type="text/javascript" src="bot.js"></script>
+<script type="text/javascript" src="voice.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
