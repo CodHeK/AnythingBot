@@ -4,7 +4,8 @@ $(document).ready(function() {
 	var name, check = 0;
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
-		
+		$("#puf").show();
+	
 		check = 0;
 		var ress = val.match(/hey/g);
 		var ress1 = val.match(/Hey/g);
@@ -12,9 +13,11 @@ $(document).ready(function() {
 		var ress3 = val.match(/Hi/g);
 		if(ress || ress1 || ress2 || ress3) {
 			check = 1;
-			$("#puf").fadeIn(1000);
-			$("#puf").fadeOut(2000);
-			$("#list").append('<li> <div class="jumbotron"><h3>Hey! Im <b>Gags</b>, and you are ?</h3></div></li>').fadeIn(2000);
+			setTimeout(function() {
+				$("#puf").hide();
+				$("#list").append('<li> <div class="jumbotron"><h3>Hey! I\'m <b>Gags</b>, and you are ?</h3></div></li>').fadeIn(2000);
+
+			}, 2000);
 		}
 		if(check == 0) {
 		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
@@ -23,8 +26,6 @@ $(document).ready(function() {
 		name = val;
 		var introSen = "" + name + "&nbspfeel free to ask me anything, anytime!";
 		if(name) {
-			$("#puf").fadeIn(1000);
-			$("#puf").fadeOut(3000);
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
 		}
