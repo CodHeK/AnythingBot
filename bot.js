@@ -2,12 +2,12 @@ $(document).ready(function() {
 	$("#preloader").hide();
 	$("#form1").hide();
 	var name, check;
-	$("#buttons").click(function(e) {
+	$("#form").submit(function(e) {
 		var val = $("#msg").val();
 		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
 		// name = $("li:nth-child(2) .jumbotron h3").html();
 		name = val;
-		var introSen = "" + name + "&nbspfeel free t o ask me anything, anytime!";
+		var introSen = "" + name + "&nbspfeel free to ask me anything, anytime!";
 		if(name) {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$("#form1").show();
 		e.preventDefault();
 	});
-	$("#buttons1").click(function(event) {
+	$("#form1").submit(function(event) {
 		var val1 = $("#msg1").val();
 		if($("#msg1").val() == '') {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspSay something manh!</h3></div></li>');
