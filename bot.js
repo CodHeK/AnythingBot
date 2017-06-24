@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$("#preloader").hide();
 	$("#form1").hide();
 	var name, check;
-	$("#form").submit(function(e) {
+	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
 		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
 		// name = $("li:nth-child(2) .jumbotron h3").html();
@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$("#form1").show();
 		e.preventDefault();
 	});
-	$("#form1").submit(function(event) {
+	$("#buttons1").click(function(event) {
 		var val1 = $("#msg1").val();
 		if($("#msg1").val() == '') {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspSay something manh!</h3></div></li>');
