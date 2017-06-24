@@ -24,10 +24,13 @@ $(document).ready(function() {
 		//name = $("li:nth-child(3) .jumbotron h3").html();
 		
 		name = val;
-		var introSen = "" + name + "&nbspfeel free to ask me anything, anytime!";
+		var introSen = "" + name + "&nbspfeel free to ask me anything, anytime! <br> * I need to get faster ! sorry for those clumsy replies ! :# * ";
 		if(name) {
+			setTimeout(function() {
+				$("#puf").hide();
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
+			}, 2000);
 		}
 		window.scrollBy(0,1000);
 		$("#form").hide();
@@ -38,7 +41,11 @@ $(document).ready(function() {
 	$("#buttons1").click(function(event) {
 		var val1 = $("#msg1").val();
 		if($("#msg1").val() == '') {
+			setTimeout(function() {
+				$("#puf").hide();
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspSay something manh!</h3></div></li>');
+			scrollBy(0, 2000);
+			}, 1000);
 		}
 		else {
 		$("#list").append('<li> <div class="jumbotron"><h3><b>'+ name + ':</b>&nbsp' + val1 +'</h3></div></li>');
@@ -128,7 +135,8 @@ $(document).ready(function() {
 		var res7a =val1.match(/haan/g);
 		var res7b =val1.match(/han/g);
 		var res7c =val1.match(/hn/g);
-		if(res7a || res7b || res7c) {
+		var res7d =val1.match(/ha/g);
+		if(res7a || res7b || res7c || res7d) {
 			flag = 1;
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspEnglish pleej ?</h3></div></li>');
 		}
@@ -159,8 +167,92 @@ $(document).ready(function() {
 			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp LOL, go ask her then ! :P *haha* </h3></div></li>');
 		}
 		
-		var no1 = val1.match(/much/g);
-		var yes1 = val1.match(/night/g);
+		var much = val1.match(/much/g);
+		var forr = val1.match(/for/g);
+		var night = val1.match(/night/g);
+		if(much && forr && night) {
+			flag = 1;
+			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Haha! You\'re funny! Anyway, It\'s free for you ;) </h3></div></li>');
+		}
+
+		var lol = val1.match(/lol/g);
+			if(lol) {
+				flag = 1;
+				$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp lolol :P </h3></div></li>');
+			}
+		var lolol = val1.match(/lolol/g);
+		 if(lolol) {
+		 	flag = 1;
+		 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp lollol I think we should stop this ! :3 </h3></div></li>');
+		 }
+		var lollol = val1.match(/lollol/g);
+		 if(lollol) {
+		 	flag = 1;
+		 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Oh, common, go do something, you\'re irritating me now!</h3></div></li>');
+		 }
+
+		 var songs = val1.match(/songs/g);
+		 var like = val1.match(/like/g);
+		 if(songs && like) {
+		 	flag = 1;
+		 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Umm, I like Kygo, Ed Sheeran ... which ones do you like ?</h3></div></li>');
+		 }
+		 var I = val1.match(/I/g);
+		 var i = val1.match(/i/g);
+		 var like = val1.match(/like/g);
+		 if((i || I) && like) {
+		 	$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp Hmm Nice ! :D</h3></div></li>');
+		 }
+
+		var weatherr = val1.match(/weather/g);
+		var city = val1.split(" ").splice(-1)[0];
+		console.log(city);
+		if(weatherr) {
+			flag = 1;
+			$.ajax({
+
+				url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" + "&APPID=b1884514adc3b3c175df2eff8f3f29e5",
+				type: "GET",
+				dataType: "jsonp",
+				success: function(data) {
+					var wt = weather(data);
+					var t = temp(data);
+					// var h = humidity(data);
+					// var p = pressure(data);
+					// var max = maxtemp(data);
+					// var min = mintemp(data);
+					// var w = wind(data);
+					// var c = country(data);
+					// var d = wind_direction(data);
+
+					$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + wt + ' with average temp about&nbsp' + t + '</h3></div></li>');
+					// $("#desp").html(wt);
+					// $("#val").html(t);
+					// $("#val_h").html(h);
+					// $("#val_p").html(p);
+					// $("#val_mt").html(max);
+					// $("#val_mit").html(min);
+					// $("#val_w").html(w);
+					// $("#country").html(c);
+					// $("#val_d").html(d);
+
+
+					// $("#cty").append("<br>");
+					// $("#cty").append("<br>"+ c);
+					// $("#tmp").append("<br>");
+					// $("#tmp").append("<br>" + t);
+					// $("#mintp").append("<br>");
+					// $("#mintp").append("<br>" + min);
+					// $("#maxtp").append("<br>");
+					// $("#maxtp").append("<br>" + max);
+					// $("#humid").append("<br>");
+					// $("#humid").append("<br>" + h);
+					// $("#pres").append("<br>");
+					// $("#pres").append("<br>" + p);
+					window.scrollBy(0,2000);
+				}
+			});
+		}
 		if(flag == 0)
  				$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
 		
@@ -168,4 +260,11 @@ $(document).ready(function() {
 			}
 		event.preventDefault();
 	});	
+
+	function weather(data) {
+	return data.weather[0].description;
+}
+function temp(data) {
+	return data.main.temp + "&deg;C";
+}
 });
