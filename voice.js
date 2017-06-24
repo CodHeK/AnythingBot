@@ -14,7 +14,7 @@ function startDictation() {
         document.getElementById('msg').value
                                  = e.results[0][0].transcript;
         recognition.stop();
-        document.getElementById('form').submit();
+        //document.getElementById('form').submit();
       };
 
       recognition.onerror = function(e) {
@@ -40,7 +40,7 @@ function startDictation() {
         document.getElementById('msg1').value
                                  = e.results[0][0].transcript;
         recognition.stop();
-        document.getElementById('form1').submit();
+        //document.getElementById('form1').submit();
       };
 
       recognition.onerror = function(e) {
