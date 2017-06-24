@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#preloader, #puf").hide();
 	$("#form1").hide();
-	var name, check = 0;
+	var name = "You", check = 0;
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
 		$("#puf").show();
@@ -15,27 +15,27 @@ $(document).ready(function() {
 			check = 1;
 			setTimeout(function() {
 				$("#puf").hide();
-				$("#list").append('<li> <div class="jumbotron"><h3>Hey! I\'m <b>Gags</b>, and you are ?</h3></div></li>').fadeIn(2000);
+				$("#list").append('<li> <div class="jumbotron"><h3>Hey! I\'m <b>Gags</b>, how can I help you ?</h3></div></li>').fadeIn(2000);
 
 			}, 1000);
 		}
-		if(check == 0) {
-		//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
-		//name = $("li:nth-child(3) .jumbotron h3").html();
+	// 	if(check == 0) {
+	// 	//$("#list").append('<li> <div class="jumbotron"><h3>' + val +'</h3></div></li>');
+	// 	//name = $("li:nth-child(3) .jumbotron h3").html();
 		
-		name = val;
-		var introSen = "" + name + "&nbspfeel free to ask me anything, anytime! <br> * I need to get faster ! sorry for those clumsy replies ! :# * ";
-		if(name) {
-			setTimeout(function() {
-				$("#puf").hide();
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
-			$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
-			}, 2000);
-		}
-		window.scrollBy(0,1000);
+	// 	name = val;
+	// 	var introSen = "" + name + "&nbspfeel free to ask me anything, anytime! <br> * I need to get faster ! sorry for those clumsy replies ! :# * ";
+	// 	if(name) {
+	// 		setTimeout(function() {
+	// 			$("#puf").hide();
+	// 		$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspHey&nbsp' + name +'!</h3></div></li>').fadeIn(2000);
+	// 		$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbsp' + introSen +'!</h3></div></li>').fadeIn(2000);
+	// 		}, 2000);
+	// 	}
+	// }
+	window.scrollBy(0,1000);
 		$("#form").hide();
 		$("#form1").show();
-	}
 		e.preventDefault();
 	});
 	$("#buttons1").click(function(event) {
@@ -222,6 +222,8 @@ $(document).ready(function() {
 				}
 			});
 		}
+
+
 		if(flag == 0)
  				$("#list").append('<li> <div class="jumbotron"><h3><b>Gags:</b>&nbspAhh ! Whut ... seems alien to me, come again please !</h3></div></li>');
 		
