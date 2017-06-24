@@ -8,4 +8,7 @@
 
 ### Will add more interesting things soon, you could even contribute add interesting replies or things which the bot can answer to ! :D
 
+## Things it can do !
+
 ### Now, know weather of any city in the world , just say, "Weather in Mumbai" or any city of your choice ! :D
+### Also, it can calculate ! Give it any calculation ! example of how you can "tell me what is 5 into 6" . 
