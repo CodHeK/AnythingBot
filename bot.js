@@ -8,13 +8,13 @@ setTimeout(function() {
 }
 
 
-$(document).ready(function() {
-	$(document).keypress(function(eve) {
-		if(eve.which == 16) {
-			$(".mic").click();
-		}
-	});
-});
+// $(document).ready(function() {
+// 	$(document).keypress(function(eve) {
+// 		if(eve.which == 16) {
+// 			$(".mic").click();
+// 		}
+// 	});
+// });
 
 $(document).ready(function() {
 	$("#preloader, #puf, #listen").hide();
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		$("#listen").show();
 		setTimeout(function() {
 			$("#listen").hide();
-		}, 4000);
+		}, 5000);
 	});	
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
@@ -144,8 +144,7 @@ $(document).ready(function() {
 		var res7a =val1.match(/haan/g);
 		var res7b =val1.match(/han/g);
 		var res7c =val1.match(/hn/g);
-		var res7d =val1.match(/ha/g);
-		if((res7a || res7b || res7c || res7d ) && flag == 0) {
+		if((res7a || res7b || res7c) && flag == 0) {
 			flag = 1;
 			display('English pleej ?');
 		}
