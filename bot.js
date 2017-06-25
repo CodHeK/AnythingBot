@@ -7,15 +7,6 @@ setTimeout(function() {
 			}, 700);
 }
 
-
-// $(document).ready(function() {
-// 	$(document).keypress(function(eve) {
-// 		if(eve.which == 16) {
-// 			$(".mic").click();
-// 		}
-// 	});
-// });
-
 $(document).ready(function() {
 	$("#preloader, #puf, #listen").hide();
 	$("#form1").hide();
@@ -24,7 +15,7 @@ $(document).ready(function() {
 		$("#listen").show();
 		setTimeout(function() {
 			$("#listen").hide();
-		}, 5000);
+		}, 3000);
 	});	
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
@@ -272,6 +263,55 @@ $(document).ready(function() {
 			display(' It is '+ div );
 		}
 
+		var mod = val1.match(/mod/g); 
+		if(mod || (val1.indexOf('%') > -1)) {
+			flag = 1;
+			var intValue = parseInt(val1.match(/[0-9]+/)[0], 10);
+			var intVal = val1.split(" ").splice(-1)[0];
+			var intValue1 = parseInt(intVal.match(/[0-9]+/)[0], 10);
+			var mod = Number(intValue)%Number(intValue1);
+			display(' It is '+ mod );
+		}
+
+
+		var video = val1.match(/video/g);
+		var fors = val1.match(/for/g);
+		var vidFind = val1.split(" ");
+		var index;
+		for(var j = 0; j < vidFind.length; j++) {
+			if(vidFind[j] == 'for') {
+				index = j;
+				break;
+			}
+		}
+		var newString = '';
+		for(var ind = j+1; ind < vidFind.length; ind++) {
+			newString += vidFind[ind] + ' ';
+		}
+		if(video && fors) {
+			//display('These are a few videos I got ! :D');
+			flag = 1;
+			//display(newString);
+			$.get(
+
+				 "https://www.googleapis.com/youtube/v3/search", {
+				 		part: 'snippet, id',
+				 		q: encodeURIComponent(newString).replace(/%20/g, "+"),
+				 		type: 'video',
+				 		key: 'AIzaSyDv3TkvD7OO4S4-wlIGEz_odJG1T5Qrbao' },
+
+				 		function(data) {
+				 			$.each(data.items, function(i,item) {
+
+				 				var output = getOutput(item);
+				 				
+				 				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags:&nbsp</b><br><div class="row" style="width:100%;margin-top:10%;height:75%;"><ul style="list-style:none;">' + output + '</ul></div></div></li>').fadeIn(2000);
+				 			});
+
+				 		}
+			);
+		}
+
 		if(flag == 0)
  				display('Ahh ! Whut ... seems alien to me, come again please');
 		
@@ -285,5 +325,34 @@ $(document).ready(function() {
 }
 function temp(data) {
 	return data.main.temp + "&deg;C";
+}
+function getOutput(item) {
+	var videoId = item.id.videoId;
+	var title = item.snippet.title;
+	var description = item.snippet.description;
+	var thumb = item.snippet.thumbnails.high.url;
+	var channelTitle = item.snippet.channelTitle;
+	var videoDate = item.snippet.publishedAt;
+
+	// $('#tit').html(title);
+	// $("#owner").html(channelTitle);
+	// $("#date").html(videoDate);
+	// $("#desp").html(description);
+	var output = '<li>' + 
+	'<div class="list-left col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+	'<a href="http://www.youtube.com/embed/'+videoId+'"><img src="'+thumb+'"></a>' +
+	'</div>'+
+	'<div class="list-right col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
+	'<h3><a class="video" href="http://www.youtube.com/embed/'+videoId+'">' +title+ '</a></h3>' +
+	'<small>By <span class="cTitle">'+channelTitle+'</span> on '+videoDate+'</small><br>' +
+	'<br><p>'+description+'</p>' +
+	'<form type="submit" action="http://www.ssyoutube.com/embed/'+videoId+'">' +
+	'<button class="btn btn-default btn-lg">Download</button>' +
+	'</form>' +
+	'</div>'+
+	'</li>';
+	'';
+
+	return output;
 }
 });
