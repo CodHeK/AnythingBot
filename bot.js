@@ -8,13 +8,16 @@ setTimeout(function() {
 }
 
 $(document).ready(function() {
+	$("#inst").show();
 	$("#preloader, #puf, #listen").hide();
 	$("#form1").hide();
 	var name = "You", check = 0;
 	$("#mic").click(function() {
+		$("#inst").hide();
 		$("#listen").show();
 		setTimeout(function() {
 			$("#listen").hide();
+			$('#inst').show();
 		}, 3000);
 	});	
 	$("#buttons").click(function(e) {
@@ -43,9 +46,11 @@ $(document).ready(function() {
 	});
 
 	$("#mic1").click(function() {
+		$("#inst").hide();
 		$("#listen").show();
 		setTimeout(function() {
 			$("#listen").hide();
+			$("#inst").show();
 		}, 4000);
 	});	
 	$("#buttons1").click(function(event) {
