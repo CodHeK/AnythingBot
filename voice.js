@@ -1,5 +1,5 @@
 function startDictation() {
-
+    
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
       var recognition = new webkitSpeechRecognition();
