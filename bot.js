@@ -1,3 +1,4 @@
+
 function display(message){
 setTimeout(function() {
 				$("#puf").hide();
@@ -6,10 +7,25 @@ setTimeout(function() {
 			}, 700);
 }
 
+
 $(document).ready(function() {
-	$("#preloader, #puf").hide();
+	$(document).keypress(function(eve) {
+		if(eve.which == 16) {
+			$(".mic").click();
+		}
+	});
+});
+
+$(document).ready(function() {
+	$("#preloader, #puf, #listen").hide();
 	$("#form1").hide();
 	var name = "You", check = 0;
+	$("#mic").click(function() {
+		$("#listen").show();
+		setTimeout(function() {
+			$("#listen").hide();
+		}, 4000);
+	});	
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
 		$("#puf").show();
@@ -29,6 +45,12 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+	$("#mic1").click(function() {
+		$("#listen").show();
+		setTimeout(function() {
+			$("#listen").hide();
+		}, 4000);
+	});	
 	$("#buttons1").click(function(event) {
 		$("#puf").show();
 		var val1 = $("#msg1").val();
@@ -122,8 +144,8 @@ $(document).ready(function() {
 		var res7a =val1.match(/haan/g);
 		var res7b =val1.match(/han/g);
 		var res7c =val1.match(/hn/g);
-		
-		if((res7a || res7b || res7c) && flag == 0) {
+		var res7d =val1.match(/ha/g);
+		if((res7a || res7b || res7c || res7d ) && flag == 0) {
 			flag = 1;
 			display('English pleej ?');
 		}

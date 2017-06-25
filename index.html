@@ -31,7 +31,7 @@
 					<button class="btn btn-default" id="buttons">Send</button><br>
 				</div>
 				<div class="col-md-2 col-sm-12 col-xs-12">
-					<i class="fa fa-microphone" aria-hidden="true" onclick="startDictation()" style="color: white;margin-left: 35%;font-size: 20px;margin-top: 25%;"></i>
+					<i class="fa fa-microphone" aria-hidden="true" onclick="startDictation()" id="mic" style="color: white;margin-left: 35%;font-size: 20px;margin-top: 25%;"></i>
 				</div>
 			</div>
 		</form>
@@ -44,10 +44,14 @@
 					<button class="btn btn-default" id="buttons1">Send</button><br>
 				</div>
 				<div class="col-md-2 col-sm-12 col-xs-12">
-					<i class="fa fa-microphone" aria-hidden="true" onclick="startDictation1()" style="color: white;margin-left: 35%;font-size: 20px;margin-top: 25%;"></i>
+					<i class="fa fa-microphone" aria-hidden="true" onclick="startDictation1()" id="mic1" style="color: white;margin-left: 35%;font-size: 20px;margin-top: 25%;"></i>
 				</div>
 			</div>
 		</form>
+		<div id="listen" style="text-align: center;">
+			<img src="puff.svg" style="margin-left: 10%;margin-top: 50%;width: 200px;height: 200px;" id="puff" /><br>
+			<h4 style="color: white;margin-left: 15%;">LISTENING ...</h4>
+		</div>
 	</div>
 	</div>
 	<div class="col-md-8 col-sm-12 col-xs-12">
@@ -55,11 +59,11 @@
 		 <ul style="list-style: none;" id="list">
 		 	<li>
 		 		<div class="jumbotron">
-		 			<h3>Wake up your bot by saying, <b>Hey</b>!</h3>
+		 			<h3>Wake up your bot by saying, <b>Hey</b>! or just, <b>Hi</b>!</h3>
 		 		</div>
 		 	</li>
 		 </ul>
-		 <img src="svg-loaders/puff.svg" style="margin-left: 45%;" id="puf" />
+		 <img src="puff.svg" style="margin-left: 45%;" id="puf" />
 	</div>
 	</div>
 </div>
