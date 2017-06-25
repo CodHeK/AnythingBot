@@ -163,12 +163,11 @@ $(document).ready(function() {
 		}
 		var no1 = val1.match(/nah/g);
 		var yes1 = val1.match(/yeah/g);
-		var give = val1.match(/give/g);
 		if(no1) {
 			flag = 1;
 			display(' *claps* you seem good to me... we could talk more!');
 		}
-		if(yes1 || give) {
+		if(yes1) {
 			flag = 1;
 			display(' LOL, go ask her then ! :P *haha* ');
 		}
@@ -362,7 +361,7 @@ $(document).ready(function() {
 
 		var who = val1.match(/who/g);
 		var president = val1.match(/president/g);
-		var President = val1.match(/P resident/g);
+		var President = val1.match(/President/g);
 		var presFind = val1.split(" ");
 		var index;
 		for(var j = 0; j < presFind.length; j++) {
@@ -380,6 +379,26 @@ $(document).ready(function() {
 			flag = 1;
 			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString2 + '" class="btn btn-default">&nbsp'+ newString2 + '</a>');
 
+		}
+
+
+		var dir = val1.match(/directions/g);
+		var dirr = val1.split(" ");
+		for(var j = 0; j < dirr.length; j++) {
+			if(dirr[j] == 'from') {
+				index1 = j;
+				continue;
+			}
+			if(dirr[j] == 'to') {
+				index2 = j;
+				continue;
+			}
+		}
+		var source = dirr[index1 + 1];
+		var dest = dirr[index2 + 1];
+		if(dir) {
+			flag = 1;
+				display('&nbsp&nbsp<a href="https://www.google.co.in/maps/dir/' + source +'/' + dest + '/@19.2613671,72.8574557,14z" class="btn btn-default">GET THE DIRECTIONS</a>');
 		}
 
 		if(flag == 0)

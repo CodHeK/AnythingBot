@@ -17,3 +17,6 @@
 ### Search for any video you want ! just say, "show me video (name of video)" or just, "search videos of (whatever you want)", that's it ! :D
 ![vids1](vids1.png)
 ### Search for songs, now search for anything ! Google integrated ! :D
+### Get Directions immidiately ! just mention from where to where ! Eg: "give me the directions from borivali to malad".
+![dir](dir.png)
+
