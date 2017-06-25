@@ -14,5 +14,6 @@
 ![weather](weather.png)
 ### Also, it can calculate ! Give it any calculation ! example of how you can "tell me what is 5 into 6" . For calculations having numbers above 100, while saying it , for example, 102 + 4, say it as "one zero two plus four".
 ![math](math.png)
-### Search for any video you want ! just say, "show me videos for (name of video)", that's it ! :D
+### Search for any video you want ! just say, "show me video (name of video)", that's it ! :D
 ![vids](vids.png)
+### Search for songs, now search for anything ! Google integrated ! :D

@@ -275,11 +275,11 @@ $(document).ready(function() {
 
 
 		var video = val1.match(/video/g);
-		var fors = val1.match(/for/g);
+		//var fors = val1.match(/for/g);
 		var vidFind = val1.split(" ");
 		var index;
 		for(var j = 0; j < vidFind.length; j++) {
-			if(vidFind[j] == 'for') {
+			if(vidFind[j] == 'video' || vidFind[j] == 'videos') {
 				index = j;
 				break;
 			}
@@ -288,7 +288,7 @@ $(document).ready(function() {
 		for(var ind = j+1; ind < vidFind.length; ind++) {
 			newString += vidFind[ind] + ' ';
 		}
-		if(video && fors) {
+		if(video) {
 			//display('These are a few videos I got ! :D');
 			flag = 1;
 			//display(newString);
@@ -310,10 +310,73 @@ $(document).ready(function() {
 
 				 		}
 			);
+			scrollBy(0, 5000);
+		}
+
+
+		var song = val1.match(/song/g);
+		//var fors = val1.match(/for/g);
+		var songFind = val1.split(" ");
+		var index;
+		for(var j = 0; j < songFind.length; j++) {
+			if(vidFind[j] == 'song') {
+				index = j;
+				break;
+			}
+		}
+		var newString1 = '';
+		for(var ind = j+1; ind < songFind.length; ind++) {
+			newString1 += songFind[ind] + ' ';
+		}
+		if(song) {
+			flag = 1;
+			//display(newString1);
+			//display('<iframe src="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString1 + '"  style="width:100%;height:100%:"></iframe>')
+			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString1 + '" class="btn btn-default">&nbsp'+ newString1 + '</a>');
+			 // var request = gapi.client.youtube.search.list({
+    //         	part: "snippet",
+    //         	type: "video",
+    //         	q: encodeURIComponent(newString1).replace(/%20/g, "+"),
+    //         	maxResults: 10,
+    //         	order: "viewCount"
+    //    		});
+			 //   request.execute(function(response) {
+    //      				 var results = response.result;
+    //       				$.each(results.items, function(index, item) {
+				// 			$.get("button.html", function(data) {
+    //             				$("#list").append('<li> <div class="jumbotron"><b> Gags:&nbsp' + tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]) + '</div></li>').fadeIn(2000);
+    //         				});
+    //       				});
+    //       				resetVideoHeight();
+    //       		});
+			scrollBy(0, 5000);
+		}
+
+
+		var who = val1.match(/who/g);
+		var president = val1.match(/president/g);
+		var President = val1.match(/P resident/g);
+		var presFind = val1.split(" ");
+		var index;
+		for(var j = 0; j < presFind.length; j++) {
+			if(vidFind[j] == 'president'|| vidFind[j] == 'President') {
+				index = j;
+				break;
+			}
+		}
+		var newString2 = '';
+		for(var ind = j; ind < presFind.length; ind++) {
+			newString2 += presFind[ind] + ' ';
+		}
+		if(who || president || President) {
+		//display('<iframe src="https://en.wikipedia.org/wiki/' + newString2 + '" style="width:100%;height:100%:"></iframe>');
+			flag = 1;
+			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString2 + '" class="btn btn-default">&nbsp'+ newString2 + '</a>');
+
 		}
 
 		if(flag == 0)
- 				display('Ahh ! Whut ... seems alien to me, come again please');
+ 				display('Ahh ! Whut ... seems alien to me, Search this on Google instead ? <br><br> <a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + val1 + '" class="btn btn-default">&nbspSEARCH</a>');
 		
 				window.scrollBy(0,2000);
 			}
@@ -355,4 +418,18 @@ function getOutput(item) {
 
 	return output;
 }
+
+
+// function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
+
+// function init() {
+//     gapi.client.setApiKey("AIzaSyBfsRf40RP0PU0InG3Pd7okMwGW0OkpXQg"); 
+//     gapi.client.load("youtube", "v3", function() {
+//     });
+// }
+
 });
+
+
+$("#gsr, #viewport, #main, #cnt, div #rcnt, div, #center_col, #res, #search, div , #ires, #rso, #uid_O, div, div, div, div, div, div, div, ._XWk")
