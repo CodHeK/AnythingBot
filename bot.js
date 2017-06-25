@@ -19,6 +19,11 @@ $(document).ready(function() {
 	});	
 	$("#buttons").click(function(e) {
 		var val = $("#msg").val();
+		if($("#msg").val() == '') {
+			display('I think you forgot to type something !');
+			scrollBy(0, 5000);
+		}
+		else {
 		$("#puf").show();
 	
 		check = 0;
@@ -33,6 +38,7 @@ $(document).ready(function() {
 	window.scrollBy(0,1000);
 		$("#form").hide();
 		$("#form1").show();
+	}
 		e.preventDefault();
 	});
 
@@ -46,7 +52,8 @@ $(document).ready(function() {
 		$("#puf").show();
 		var val1 = $("#msg1").val();
 		if($("#msg1").val() == '') {
-			display('Say something manh!');
+			display('I think you forgot to type something !');
+			scrollBy(0, 5000);
 		}
 		else {
 		$("#list").append('<li> <div class="jumbotron"><h3><b>'+ name + ':</b>&nbsp' + val1 +'</h3></div></li>');
@@ -432,4 +439,3 @@ function getOutput(item) {
 });
 
 
-$("#gsr, #viewport, #main, #cnt, div #rcnt, div, #center_col, #res, #search, div , #ires, #rso, #uid_O, div, div, div, div, div, div, div, ._XWk")
