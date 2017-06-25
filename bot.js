@@ -211,7 +211,6 @@ $(document).ready(function() {
 
 		var weatherr = val1.match(/weather/g);
 		var city = val1.split(" ").splice(-1)[0];
-		console.log(city);
 		if(weatherr) {
 			flag = 1;
 			$.ajax({
@@ -270,13 +269,14 @@ $(document).ready(function() {
 		}
 
 		var mod = val1.match(/mod/g); 
-		if(mod || (val1.indexOf('%') > -1)) {
+		var mod1 = val1.match(/Mod/g); 
+		if(mod || (val1.indexOf('%') > -1) || mod1) {
 			flag = 1;
 			var intValue = parseInt(val1.match(/[0-9]+/)[0], 10);
 			var intVal = val1.split(" ").splice(-1)[0];
 			var intValue1 = parseInt(intVal.match(/[0-9]+/)[0], 10);
-			var mod = Number(intValue)%Number(intValue1);
-			display(' It is '+ mod );
+			var modu = Number(intValue)%Number(intValue1);
+			display(' It is '+ modu );
 		}
 
 
@@ -295,9 +295,7 @@ $(document).ready(function() {
 			newString += vidFind[ind] + ' ';
 		}
 		if(video) {
-			//display('These are a few videos I got ! :D');
 			flag = 1;
-			//display(newString);
 			$.get(
 
 				 "https://www.googleapis.com/youtube/v3/search", {
@@ -316,46 +314,27 @@ $(document).ready(function() {
 
 				 		}
 			);
-			scrollBy(0, 5000);
+			window.scrollBy(0, 5000);
 		}
 
 
 		var song = val1.match(/song/g);
-		//var fors = val1.match(/for/g);
 		var songFind = val1.split(" ");
 		var index;
-		for(var j = 0; j < songFind.length; j++) {
-			if(vidFind[j] == 'song') {
-				index = j;
+		for(var l = 0; l < songFind.length; l++) {
+			if(vidFind[l] == 'song') {
+				index = l;
 				break;
 			}
 		}
 		var newString1 = '';
-		for(var ind = j+1; ind < songFind.length; ind++) {
-			newString1 += songFind[ind] + ' ';
+		for(var indi = l+1; indi < songFind.length; indi++) {
+			newString1 += songFind[indi] + ' ';
 		}
 		if(song) {
 			flag = 1;
-			//display(newString1);
-			//display('<iframe src="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString1 + '"  style="width:100%;height:100%:"></iframe>')
 			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString1 + '" class="btn btn-default">&nbsp'+ newString1 + '</a>');
-			 // var request = gapi.client.youtube.search.list({
-    //         	part: "snippet",
-    //         	type: "video",
-    //         	q: encodeURIComponent(newString1).replace(/%20/g, "+"),
-    //         	maxResults: 10,
-    //         	order: "viewCount"
-    //    		});
-			 //   request.execute(function(response) {
-    //      				 var results = response.result;
-    //       				$.each(results.items, function(index, item) {
-				// 			$.get("button.html", function(data) {
-    //             				$("#list").append('<li> <div class="jumbotron"><b> Gags:&nbsp' + tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]) + '</div></li>').fadeIn(2000);
-    //         				});
-    //       				});
-    //       				resetVideoHeight();
-    //       		});
-			scrollBy(0, 5000);
+			window.scrollBy(0, 5000);
 		}
 
 
@@ -364,41 +343,43 @@ $(document).ready(function() {
 		var President = val1.match(/President/g);
 		var presFind = val1.split(" ");
 		var index;
-		for(var j = 0; j < presFind.length; j++) {
-			if(vidFind[j] == 'president'|| vidFind[j] == 'President') {
-				index = j;
+		for(var m = 0; m < presFind.length; m++) {
+			if(vidFind[m] == 'president'|| vidFind[m] == 'President') {
+				index = m;
 				break;
 			}
 		}
 		var newString2 = '';
-		for(var ind = j; ind < presFind.length; ind++) {
-			newString2 += presFind[ind] + ' ';
+		for(var indie = j; indie < presFind.length; indie++) {
+			newString2 += presFind[indie] + ' ';
 		}
 		if(who || president || President) {
-		//display('<iframe src="https://en.wikipedia.org/wiki/' + newString2 + '" style="width:100%;height:100%:"></iframe>');
 			flag = 1;
 			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString2 + '" class="btn btn-default">&nbsp'+ newString2 + '</a>');
-
+			window.scrollBy(0, 5000);
 		}
 
 
-		var dir = val1.match(/directions/g);
+		var dir1 = val1.match(/directions/g);
+		var dir2 = val1.match(/direction/g);
 		var dirr = val1.split(" ");
-		for(var j = 0; j < dirr.length; j++) {
-			if(dirr[j] == 'from') {
-				index1 = j;
+		var index1, index2;
+		for(var z = 0; z < dirr.length; z++) {
+			if(dirr[z] == 'from') {
+				index1 = z;
 				continue;
 			}
-			if(dirr[j] == 'to') {
-				index2 = j;
+			if(dirr[z] == 'to') {
+				index2 = z;
 				continue;
 			}
 		}
 		var source = dirr[index1 + 1];
 		var dest = dirr[index2 + 1];
-		if(dir) {
+		if(dir1 || dir2) {
 			flag = 1;
 				display('&nbsp&nbsp<a href="https://www.google.co.in/maps/dir/' + source +'/' + dest + '/@19.2613671,72.8574557,14z" class="btn btn-default">GET THE DIRECTIONS</a>');
+				window.scrollBy(0, 5000);
 		}
 
 		if(flag == 0)
@@ -423,10 +404,6 @@ function getOutput(item) {
 	var channelTitle = item.snippet.channelTitle;
 	var videoDate = item.snippet.publishedAt;
 
-	// $('#tit').html(title);
-	// $("#owner").html(channelTitle);
-	// $("#date").html(videoDate);
-	// $("#desp").html(description);
 	var output = '<li>' + 
 	'<div class="list-left col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
 	'<a href="http://www.youtube.com/embed/'+videoId+'"><img src="'+thumb+'"></a>' +
@@ -444,17 +421,6 @@ function getOutput(item) {
 
 	return output;
 }
-
-
-// function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
-
-
-// function init() {
-//     gapi.client.setApiKey("AIzaSyBfsRf40RP0PU0InG3Pd7okMwGW0OkpXQg"); 
-//     gapi.client.load("youtube", "v3", function() {
-//     });
-// }
-
 });
 
 
