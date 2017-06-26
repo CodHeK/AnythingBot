@@ -1,9 +1,8 @@
-
 function display(message){
 setTimeout(function() {
 				$("#puf").hide();
-				responsiveVoice.speak(message);
 				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags: </b>' + message + '</h3></div></li>').fadeIn(2000);
+				responsiveVoice.speak(message);
 			}, 700);
 }
 
@@ -12,17 +11,6 @@ $(document).ready(function() {
 	$("#preloader, #puf, #listen").hide();
 	$("#form1").hide();
 	var name = "You", check = 0;
-	// $(window).on('keypress', function(event) {
-	// 	if(event.which === 13) {
-	// 	$("#mic").click();
-	// 	$("#inst").hide();
-	// 	$("#listen").show();
-	// 	setTimeout(function() {
-	// 		$("#listen").hide();
-	// 		$('#inst').show();
-	// 	}, 3000);
-	// }
-	// });
 	$("#mic").click(function() {
 		$("#inst").hide();
 		$("#listen").show();
@@ -55,17 +43,7 @@ $(document).ready(function() {
 	}
 		e.preventDefault();
 	});
-	// $(window).on('keypress', function(event) {
-	// 	if(event.which === 13) {
-	// 	$("#mic1").click();
-	// 	$("#inst").hide();
-	// 	$("#listen").show();
-	// 	setTimeout(function() {
-	// 		$("#listen").hide();
-	// 		$('#inst').show();
-	// 	}, 3000);
-	// }
-	// });
+
 	$("#mic1").click(function() {
 		$("#inst").hide();
 		$("#listen").show();
@@ -359,6 +337,7 @@ $(document).ready(function() {
 		}
 		if(song) {
 			flag = 1;
+			//window.location.href = 'https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString1 + ''
 			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString1 + '" class="btn btn-default">&nbsp'+ newString1 + '</a>');
 			window.scrollBy(0, 5000);
 		}
@@ -381,6 +360,10 @@ $(document).ready(function() {
 		}
 		if(who || president || President) {
 			flag = 1;
+			//var link1 = "https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=";
+			//var link = link1.concat(newString2);
+			//$(location).attr('href',link);
+			//window.location = "https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString2 + '"
 			display('Search Google, for these easy things ? <br><br><a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + newString2 + '" class="btn btn-default">&nbsp'+ newString2 + '</a>');
 			window.scrollBy(0, 5000);
 		}
@@ -410,8 +393,24 @@ $(document).ready(function() {
                 }
 		if(dir1 || dir2) {
 			flag = 1;
+				//window.location.href = 'https://www.google.co.in/maps/dir/' + source +'/' + dest + '/@19.2613671,72.8574557,14z';
 				display('&nbsp&nbsp<a href="https://www.google.co.in/maps/dir/' + source +'/' + dest + '/@19.2613671,72.8574557,14z" class="btn btn-default">GET THE DIRECTIONS</a>');
 				window.scrollBy(0, 5000);
+		}
+		var r="";
+	        var loc1 = val1.match(/location/g);
+	        var loc2 = val1.match(/my/g);
+		var loc3 = val1.match(/current/g);
+	        var loc4 = val1.match(/where/g);
+	        var loc5 = val1.match(/I/g);
+		if(((loc1 && loc2) || (loc3 && loc1) || (loc4 && loc5) || (loc2 && loc3 && loc1))){
+		   flag=1;
+		   
+		   if (navigator.geolocation) {
+                                  navigator.geolocation.getCurrentPosition(showPosition);
+                       } 
+                        window.scrollBy(0,4000);
+		   
 		}
 
 		if(flag == 0)
@@ -422,8 +421,15 @@ $(document).ready(function() {
 		event.preventDefault();
 	});	
 
-	function weather(data) {
-	return data.weather[0].description;
+function showPosition(position) {
+    var source = "";
+    source += position.coords.latitude + "," + position.coords.longitude;
+   // window.location.href = "https://www.google.co.in/maps/place/' + source  + '/@25.4432533,81.7678107"
+    display('&nbsp&nbsp<a href="https://www.google.co.in/maps/place/' + source  + '/@25.4432533,81.7678107" class="btn btn-default">Locate your Position</a>');
+}
+	
+function weather(data) {
+        return data.weather[0].description;
 }
 function temp(data) {
 	return data.main.temp + "&deg;C";
@@ -454,5 +460,3 @@ function getOutput(item) {
 	return output;
 }
 });
-
-
