@@ -1,11 +1,10 @@
-function display(message,flag2){
+function display(message){
 setTimeout(function() {
 				$("#puf").hide();
 				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags: </b>' + message + '</h3></div></li>').fadeIn(2000);
-				if(flag2==1)
-				{
+				
 				    responsiveVoice.speak(message);
-				}
+				
                       }, 700);
 }
 
