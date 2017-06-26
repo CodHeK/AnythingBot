@@ -16,6 +16,8 @@
 ![dir](dir.png)
 ### Get you location, just say, "give me my current location" or "where am I".
 ![myLocation](myLocation.png)
+### Ask for small JS games.
+![game](game.png)
 
 
 ### Will add more interesting things soon, you could even contribute add interesting replies and add things which the bot can answer to ! :D
