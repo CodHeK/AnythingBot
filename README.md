@@ -1,6 +1,6 @@
 # AnythingBot - Gags
 
-### Feeling Lazy, to type, press the mic, and start talking !
+### Feeling Lazy, to type, press the mic, and start talking and it talks back ! :D
 ### Say, "Hey" to wake the bot !
 
 ## Things it can do !
