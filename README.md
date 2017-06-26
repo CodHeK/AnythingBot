@@ -13,8 +13,9 @@
 ![vids1](vids1.png)
 ### Search for songs, now search for anything ! Google integrated ! :D
 ### Get Directions immidiately ! just mention from where to where ! Eg: "give me the directions from borivali to malad".
-### Get you location, just say, "give me my current location" or "where am I".
 ![dir](dir.png)
+### Get you location, just say, "give me my current location" or "where am I".
+![myLocation](myLocation.png)
 
 
 ### Will add more interesting things soon, you could even contribute add interesting replies and add things which the bot can answer to ! :D

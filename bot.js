@@ -406,9 +406,14 @@ $(document).ready(function() {
 		if(((loc1 && loc2) || (loc3 && loc1) || (loc4 && loc5) || (loc2 && loc3 && loc1))){
 		   flag=1;
 		   
-		   if (navigator.geolocation) {
-                                  navigator.geolocation.getCurrentPosition(showPosition);
-                       } 
+		    if ("geolocation" in navigator){ //check geolocation available 
+        //try to get user current location using getCurrentPosition() method
+        navigator.geolocation.getCurrentPosition(function(position){ 
+                display("Found your location <br />Lat : "+position.coords.latitude+" </br>Lang :"+ position.coords.longitude);
+            });
+    }else{
+        console.log("Browser doesn't support geolocation!");
+    } 
                         window.scrollBy(0,4000);
 		   
 		}
@@ -421,13 +426,6 @@ $(document).ready(function() {
 		event.preventDefault();
 	});	
 
-function showPosition(position) {
-    var source = "";
-    source += position.coords.latitude + "," + position.coords.longitude;
-   // window.location.href = "https://www.google.co.in/maps/place/' + source  + '/@25.4432533,81.7678107"
-    display('&nbsp&nbsp<a href="https://www.google.co.in/maps/place/' + source  + '/@25.4432533,81.7678107" class="btn btn-default">Locate your Position</a>');
-}
-	
 function weather(data) {
         return data.weather[0].description;
 }
