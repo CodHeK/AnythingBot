@@ -2,8 +2,8 @@
 function display(message){
 setTimeout(function() {
 				$("#puf").hide();
-				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags: </b>' + message + '</h3></div></li>').fadeIn(2000);
 				responsiveVoice.speak(message);
+				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags: </b>' + message + '</h3></div></li>').fadeIn(2000);
 			}, 700);
 }
 
@@ -12,6 +12,17 @@ $(document).ready(function() {
 	$("#preloader, #puf, #listen").hide();
 	$("#form1").hide();
 	var name = "You", check = 0;
+	// $(window).on('keypress', function(event) {
+	// 	if(event.which === 13) {
+	// 	$("#mic").click();
+	// 	$("#inst").hide();
+	// 	$("#listen").show();
+	// 	setTimeout(function() {
+	// 		$("#listen").hide();
+	// 		$('#inst').show();
+	// 	}, 3000);
+	// }
+	// });
 	$("#mic").click(function() {
 		$("#inst").hide();
 		$("#listen").show();
@@ -44,7 +55,17 @@ $(document).ready(function() {
 	}
 		e.preventDefault();
 	});
-
+	// $(window).on('keypress', function(event) {
+	// 	if(event.which === 13) {
+	// 	$("#mic1").click();
+	// 	$("#inst").hide();
+	// 	$("#listen").show();
+	// 	setTimeout(function() {
+	// 		$("#listen").hide();
+	// 		$('#inst').show();
+	// 	}, 3000);
+	// }
+	// });
 	$("#mic1").click(function() {
 		$("#inst").hide();
 		$("#listen").show();
@@ -379,8 +400,14 @@ $(document).ready(function() {
 				continue;
 			}
 		}
-		var source = dirr[index1 + 1];
-		var dest = dirr[index2 + 1];
+		var source = "";
+                var dest = "";
+                for(var z = index1 + 1; z < index2; z++) {
+                      source += dirr[z]+"+";
+                }
+                for(var z = index2 + 1; z < dirr.length; z++) {
+                      dest += dirr[z]+"+";
+                }
 		if(dir1 || dir2) {
 			flag = 1;
 				display('&nbsp&nbsp<a href="https://www.google.co.in/maps/dir/' + source +'/' + dest + '/@19.2613671,72.8574557,14z" class="btn btn-default">GET THE DIRECTIONS</a>');
