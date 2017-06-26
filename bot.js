@@ -427,7 +427,7 @@ $(document).ready(function() {
                 var gam3 = val1.match(/play/g);
                 if(gam3 && (gam1 || gam2) && flag==0) {
                      flag=1;
-                     display('Right now we have the following games: <br><ul><li><a href = "https://ravicharann.github.io/BlockBreaker-js/" class="btn btn-default">Atari Breakout</a>&nbsp;&nbsp;</li><li><a href = "https://codhek.github.io/ColorGame/" class="btn btn-default">Da Vinci Color</a>&nbsp;&nbsp;</li><li><a href = "https://arindam-modak.github.io/Flappy-bird-game/" class="btn btn-default">Flappy Bird</a>&nbsp;&nbsp;</li><li><a href = "http://anupamdagar.me/javascript-game/" class="btn btn-default">Egg and Bucket</a></li><li>For more search the web: <a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + val1 + '" class="btn btn-default">&nbspSEARCH</a></li></ul>');
+                     display('Right now we have the following games: <br><br><ul><li><a href = "https://ravicharann.github.io/BlockBreaker-js/" class="btn btn-default">Atari Breakout</a>&nbsp;&nbsp;</li><br><li><a href = "https://codhek.github.io/ColorGame/" class="btn btn-default">Da Vinci Color</a>&nbsp;&nbsp;</li><br><li><a href = "https://arindam-modak.github.io/Flappy-bird-game/" class="btn btn-default">Flappy Bird</a>&nbsp;&nbsp;</li><br><li><a href = "http://anupamdagar.me/javascript-game/" class="btn btn-default">Egg and Bucket</a></li><br><li>For more search the web: <a href="https://www.google.co.in/?gfe_rd=cr&ei=WohPWZeAIrPT8gfkz5_ADA&gws_rd=ssl#q=' + val1 + '" class="btn btn-default">&nbspSEARCH</a></li></ul>');
                 }
 
 		if(flag == 0)
