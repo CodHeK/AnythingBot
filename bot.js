@@ -1,9 +1,12 @@
-function display(message){
+function display(message,flag2){
 setTimeout(function() {
 				$("#puf").hide();
 				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags: </b>' + message + '</h3></div></li>').fadeIn(2000);
-				responsiveVoice.speak(message);
-			}, 700);
+				if(flag2==1)
+				{
+				    responsiveVoice.speak(message);
+				}
+                      }, 700);
 }
 
 $(document).ready(function() {
@@ -410,6 +413,8 @@ $(document).ready(function() {
         //try to get user current location using getCurrentPosition() method
         navigator.geolocation.getCurrentPosition(function(position){ 
                 display("Found your location <br />Lat : "+position.coords.latitude+" </br>Lang :"+ position.coords.longitude);
+		var source = position.coords.latitude + "," + position.coords.longitude;
+		display('<a href="https://www.google.co.in/maps/place/' + source + '/@25.4432533,81.7678107" class="btn btn-default">GET Location</a>');
             });
     }else{
         console.log("Browser doesn't support geolocation!");
