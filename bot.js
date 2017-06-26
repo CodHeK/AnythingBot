@@ -3,7 +3,7 @@ function display(message){
 setTimeout(function() {
 				$("#puf").hide();
 				$("#list").append('<li> <div class="jumbotron"><h3><b> Gags: </b>' + message + '</h3></div></li>').fadeIn(2000);
-
+				responsiveVoice.speak(message);
 			}, 700);
 }
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
 		var ress3 = val.match(/Hi/g);
 		if(ress || ress1 || ress2 || ress3) {
 			check = 1;
-			display('Hey I\'m Gags. How can I help you ? :)')
+			display('Hey I\'m Gags. How can I help you ?')
 		}
 	window.scrollBy(0,1000);
 		$("#form").hide();
