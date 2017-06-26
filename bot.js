@@ -99,7 +99,7 @@ $(document).ready(function() {
 		var date = new Date();
 		if(res2) {
 			flag = 1;
-			display('It is&nbsp' + date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() + ' today, hope you\'re not missing someone\'s birthday :p !');	
+			display('It is&nbsp' + date.getDate() + '/' + (parseInt(date.getMonth()) + 1) + '/' + date.getFullYear() + ' today, hope you\'re not missing someone\'s birthday :p !');	
 		}
 		var res2 =val1.match(/old/g);
 		if(res2) {
