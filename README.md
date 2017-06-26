@@ -3,11 +3,6 @@
 ### Feeling Lazy, to type, press the mic, and start talking !
 ### Say, "Hey" to wake the bot !
 
-
-### Still dev in progress, not many features added, but you can ask him how he is, what is it doing, what is today's date, who created it :P or when was it created !
-
-### Will add more interesting things soon, you could even contribute add interesting replies or things which the bot can answer to ! :D
-
 ## Things it can do !
 ![main_page](main.png)
 ### Now, know weather of any city in the world , just say, "Weather in Mumbai" or any city of your choice ! :D
@@ -20,3 +15,5 @@
 ### Get Directions immidiately ! just mention from where to where ! Eg: "give me the directions from borivali to malad".
 ![dir](dir.png)
 
+
+### Will add more interesting things soon, you could even contribute add interesting replies and add things which the bot can answer to ! :D
